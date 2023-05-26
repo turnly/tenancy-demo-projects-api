@@ -1,0 +1,22 @@
+{
+  "name": "@tenancy.tly/demo-projects-api",
+  "version": "0.0.0",
+  "private": true,
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=development node -r dotenv/config src/server.js",
+    "start:tenancy": "cd .tenancy && docker compose up -d",
+    "stop:tenancy": "cd .tenancy && docker compose down"
+  },
+  "dependencies": {
+    "@prisma/client": "4.14.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "prisma": "^4.14.0",
+    "@tenancy.tly/auth": "^0.0.3",
+    "@tenancy.tly/sdk": "^0.0.3",
+    "@tenancy.tly/policies": "^0.0.3",
+    "dotenv": "^16.0.3"
+  }
+}

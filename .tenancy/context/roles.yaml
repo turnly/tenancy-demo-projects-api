@@ -1,0 +1,9 @@
+- kind: Role
+  key: roles:owner
+  name: Owner
+  description: Owner of the Projects
+
+- kind: Role
+  key: roles:developer
+  name: Developer
+  description: Developer of the Projects

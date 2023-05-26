@@ -1,0 +1,14 @@
+- kind: Permission
+  name: Create Projects
+  key: perm:write:projects
+  roles: [roles:owner]
+
+- kind: Permission
+  name: Retrieve Projects
+  key: perm:read:projects
+  roles: [roles:owner, roles:developer]
+
+- kind: Permission
+  name: Delete Projects
+  key: perm:delete:projects
+  roles: [roles:owner]

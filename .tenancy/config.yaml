@@ -1,0 +1,41 @@
+---
+version: api.tenancy.dev/v1
+
+permissions:
+  enabled: true
+
+roles:
+  enabled: true
+
+organizations:
+  model: org:shared
+  defaultGroups:
+    - groups:tenancy:org:roles_perms
+    - groups:tenancy:org:tokens
+    - groups:tenancy:org:memberships
+    - groups:tenancy:org:subdomain
+
+storage:
+  driver: mongodb
+  url: ${DATABASE_URL}
+  import:
+    enabled: true
+    directory: context
+
+events:
+  driver: disk
+
+auth:
+  provider: oauth0
+  issuer: ${AUTH_ISSUER}
+  claims:
+    sub: sub
+    email: https://turnly.app/email
+    type: https://turnly.app/token_type
+  jwks:
+    uri: ${AUTH_JWKS_URI}
+
+invites:
+  url: https://turnly.app/invites
+  expiresInHours: 72
+  subject: You have been invited to join Turnly Organization

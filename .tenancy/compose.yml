@@ -1,0 +1,27 @@
+# WARNING!
+# Use this file only for example purposes.
+# We're exposing here sensitive ports and services.
+
+services:
+  tenancy:
+    image: ghcr.io/turnly/tenancy:latest
+    ports:
+      - 6000:6000
+    volumes:
+      - ./config.yaml:/app/config.yaml
+      - ./context:/app/context
+    environment:
+      NODE_ENV: production
+      APP_NAME: tenancy
+      APP_PORT: 6000
+      DATABASE_URL: mongodb://root:tenancy@mongo:27017
+      ADMIN_CLIENT_ID: pk_admin_...
+      ADMIN_CLIENT_SECRET: sk_admin_...
+      AUTH_ISSUER: ${AUTH_ISSUER}
+      AUTH_JWKS_URI: ${AUTH_JWKS_URI}
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: tenancy
