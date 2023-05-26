@@ -7,10 +7,10 @@ services:
     image: ghcr.io/turnly/tenancy:latest
     ports:
       - 6000:6000
+    env_file: ../.env
     volumes:
       - ./config.yaml:/app/config.yaml
       - ./context:/app/context
-    env_file: ../.env
 
   mongo:
     image: mongo
