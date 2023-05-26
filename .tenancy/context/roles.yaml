@@ -1,7 +1,7 @@
 - kind: Role
   key: roles:owner
-  name: Owner
-  description: Owner of the Projects
+  name: Custom Owner
+  description: Custom Owner of the Projects
 
 - kind: Role
   key: roles:developer

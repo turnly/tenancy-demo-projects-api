@@ -11,9 +11,7 @@ organizations:
   model: org:shared
   defaultGroups:
     - groups:tenancy:org:roles_perms
-    - groups:tenancy:org:tokens
     - groups:tenancy:org:memberships
-    - groups:tenancy:org:subdomain
 
 storage:
   driver: mongodb
